@@ -68,10 +68,11 @@
                                         class="img-fluid mb-3 d-block mx-auto" alt="company logo"
                                         width="150">
 
-                                    <form action="#">
+                                    <form action="{{ route('login.auth') }}" method="POST">
+                                        @csrf
                                         <div class="form-group">
                                             <label for="email2">Email Address</label>
-                                            <input type="email" class="form-control" id="email2"
+                                            <input type="email" class="form-control" id="email2" name="email"
                                                 placeholder="Enter Email">
                                         </div>
                                         <div class="form-group">
@@ -81,7 +82,7 @@
                                                     <a href="#" class="text-small">Forgot Password?</a>
                                                 </div>
                                             </div>
-                                            <input type="password" class="form-control" id="password"
+                                            <input type="password" class="form-control" id="password" name="password"
                                                 placeholder="Password">
                                         </div>
                                         <div class="form-group">

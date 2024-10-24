@@ -33,6 +33,7 @@ Route::middleware('guest')->group(function() {
     })->name('about');
     Route::get('/register', [RegisterController::class, 'index'])->name('register');
     Route::get('/login', [AuthController::class, 'index'])->name('login');
+    Route::post('/login', [AuthController::class, 'authenticate'])->name('login.auth');
 });
 
 Route::middleware('auth')->group(function() {
@@ -53,4 +54,6 @@ Route::middleware('auth')->group(function() {
     Route::middleware('roles:applicant')->group(function() {
 
     });
+
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
